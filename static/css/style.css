@@ -3,11 +3,36 @@ body {
     margin: 0;
     padding: 0;
 }
+
+/* Navigation styles */
+header {
+    border-bottom: 1px solid #333;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 10px 0;
+}
+
+/* Style all nav links */
 nav a {
-    margin: 0 10px;
     text-decoration: none;
     color: #333;
+    font-size: 18px;
+    margin: 0 10px;
 }
+
+/* Position the Idea Tool link to the top-left */
+nav a.idea-tool {
+    position: absolute;
+    left: 20px;
+}
+
+/* Additional styles for forms, errors, etc. */
 form {
     margin: 20px;
 }

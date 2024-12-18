@@ -12,8 +12,9 @@
 
     <label for="style_choice">Select a style:</label>
     <select name="style_choice" id="style_choice">
-        <option value="creative" {% if selected_style == 'creative' %}selected{% endif %}>Creative</option>
-        <option value="professional" {% if selected_style == 'professional' %}selected{% endif %}>Professional</option>
+        <option value="default" {% if selected_style == 'default' %}selected{% endif %}>Default</option>
+        <option value="writing prompt" {% if selected_style == 'writing prompt' %}selected{% endif %}>Writing Prompt</option>
+        <option value="business/product idea" {% if selected_style == 'business/product idea' %}selected{% endif %}>Business/Product Idea</option>
     </select><br><br>
     
     <button type="submit">Generate</button>
@@ -22,6 +23,6 @@
 
 {% if result %}
 <h2>Expanded Idea:</h2>
-<div id="result"></div>
+<div id="result">{{ result|replace('\n', '<br>')|safe }}</div>
 {% endif %}
 {% endblock %}
