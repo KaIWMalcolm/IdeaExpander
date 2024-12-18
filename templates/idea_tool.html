@@ -1,28 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Idea Tool</h1>
+<div class="idea-tool-container">
+    <!-- Dropdown menu top-right -->
+    <div class="style-dropdown">
+        <select id="style_choice">
+            <option value="default" {% if selected_style == 'default' %}selected{% endif %}>Default</option>
+            <option value="writing prompt" {% if selected_style == 'writing prompt' %}selected{% endif %}>Writing Prompt</option>
+            <option value="business/product idea" {% if selected_style == 'business/product idea' %}selected{% endif %}>Business/Product Idea</option>
+        </select>
+    </div>
 
-{% if error %}
-    <div class="error">{{ error }}</div>
-{% endif %}
+    <!-- Large text area for user input -->
+    <div class="input-area">
+        <textarea id="user_input" placeholder="Enter your idea here..."></textarea>
+        <button id="generate_btn">Generate</button>
+    </div>
 
-<form method="POST" action="{{ url_for('idea_tool') }}">
-    <label for="user_input">Your Idea:</label><br>
-    <textarea name="user_input" id="user_input" rows="4" cols="50">{{ original if original else '' }}</textarea><br><br>
-
-    <label for="style_choice">Select a style:</label>
-    <select name="style_choice" id="style_choice">
-        <option value="default" {% if selected_style == 'default' %}selected{% endif %}>Default</option>
-        <option value="writing prompt" {% if selected_style == 'writing prompt' %}selected{% endif %}>Writing Prompt</option>
-        <option value="business/product idea" {% if selected_style == 'business/product idea' %}selected{% endif %}>Business/Product Idea</option>
-    </select><br><br>
-    
-    <button type="submit">Generate</button>
-</form>
-
-
-{% if result %}
-<h2>Expanded Idea:</h2>
-<div id="result">{{ result|replace('\n', '<br>')|safe }}</div>
-{% endif %}
+    <!-- This container will show loading and then the result -->
+    <div id="response_container">
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+        {% if result %}
+            <h2>Expanded Idea:</h2>
+            <div class="result" style="white-space: pre-wrap;">{{ result }}</div>
+        {% endif %}
+    </div>
+</div>
 {% endblock %}

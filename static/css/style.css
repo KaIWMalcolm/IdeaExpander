@@ -1,5 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
     margin: 0;
     padding: 0;
 }
@@ -22,8 +23,15 @@ nav {
 nav a {
     text-decoration: none;
     color: #333;
-    font-size: 18px;
-    margin: 0 10px;
+    font-size: 27px;
+    margin: 0 20px;
+    border-radius: 15px;
+    padding: 12px 17px;
+    transition: background-color 0.25s;
+}
+
+nav a:hover {
+    background-color: #a8a8a8; /* Light grey background on hover */
 }
 
 /* Position the Idea Tool link to the top-left */
@@ -32,13 +40,81 @@ nav a.idea-tool {
     left: 20px;
 }
 
-/* Additional styles for forms, errors, etc. */
-form {
-    margin: 20px;
+/* Idea tool container styling */
+.idea-tool-container {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
 }
+
+/* Dropdown in top right */
+.style-dropdown {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.style-dropdown select {
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+/* Input area for textarea and button */
+.input-area {
+    position: relative;
+    margin-top: 50px; /* space below dropdown */
+    display: flex;
+    flex-direction: column;
+    height: 33vh; /* about one-third of the page height */
+}
+
+#user_input {
+    flex: 1;
+    padding: 15px;
+    font-size: 16px;
+    resize: none; /* Prevent manual resize */
+    border: 2px solid #333;
+    border-radius: 5px;
+}
+
+#user_input:focus {
+    outline: none;
+    border-color: #555;
+}
+
+#generate_btn {
+    align-self: flex-end;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#generate_btn:hover {
+    background: #555;
+}
+
+/* Response container */
+#response_container {
+    margin-top: 20px;
+    font-weight: normal;
+    font-size: 16px;
+}
+
 .error {
     color: red;
+    margin-top: 10px;
 }
-.success {
-    color: green;
+
+.result {
+    margin-top: 10px;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: normal;
 }
