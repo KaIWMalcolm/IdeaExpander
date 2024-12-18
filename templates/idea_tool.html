@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Idea Tool</h1>
+
+{% if error %}
+    <div class="error">{{ error }}</div>
+{% endif %}
+
+<form method="POST" action="{{ url_for('idea_tool') }}">
+    <label for="user_input">Your Idea:</label><br>
+    <textarea name="user_input" id="user_input" rows="4" cols="50">{{ original if original else '' }}</textarea><br><br>
+
+    <label for="style_choice">Select a style:</label>
+    <select name="style_choice" id="style_choice">
+        <option value="creative" {% if selected_style == 'creative' %}selected{% endif %}>Creative</option>
+        <option value="professional" {% if selected_style == 'professional' %}selected{% endif %}>Professional</option>
+    </select><br><br>
+    
+    <button type="submit">Generate</button>
+</form>
+
+{% if result %}
+<h2>Expanded Idea:</h2>
+<p>{{ result }}</p>
+{% endif %}
+{% endblock %}
