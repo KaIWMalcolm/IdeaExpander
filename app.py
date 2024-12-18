@@ -65,3 +65,25 @@ def contact():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+    
+@app.route('/api/generate', methods=['POST'])
+def api_generate():
+    data = request.get_json()
+    user_input = data.get('user_input', '')
+    style = data.get('style', 'creative')
+
+    if not user_input.strip():
+        return jsonify({"error": "Please provide some input"}), 400
+
+    try:
+        prompt = f"Expand this idea in a {style} style:\n{user_input}"
+        response = openai.Completion.create(
+            engine="text-davinci-003",
+            prompt=prompt,
+            max_tokens=150
+        )
+        expanded_idea = response.choices[0].text.strip()
+        return jsonify({"result": expanded_idea})
+    except Exception:
+        return jsonify({"error": "API error, please try again"}), 500
