@@ -10,21 +10,22 @@
         </select>
     </div>
 
-    <!-- Large text area for user input -->
-    <div class="input-area">
-        <textarea id="user_input" placeholder="Enter your idea here..."></textarea>
-        <button id="generate_btn">Generate</button>
-    </div>
+    <form method="POST" action="{{ url_for('idea_tool') }}">
+        <div class="input-area">
+            <textarea id="user_input" name="user_input" placeholder="Enter your idea here..."></textarea>
+            <button id="generate_btn" type="submit">Generate</button>
+        </div>
+    </form>
 
-    <!-- This container will show loading and then the result -->
+    <!-- This container will show loading or errors -->
     <div id="response_container">
         {% if error %}
             <div class="error">{{ error }}</div>
         {% endif %}
         {% if result %}
-            <h2>Expanded Idea:</h2>
-            <div class="result" style="white-space: pre-wrap;">{{ result }}</div>
-        {% endif %}
+            <!-- A hidden element to store the expanded idea so JS can extract it -->
+            <div id="result" style="display:none;">{{ result }}</div>
+{% endif %}
     </div>
 </div>
 {% endblock %}
