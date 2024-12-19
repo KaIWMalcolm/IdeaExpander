@@ -100,9 +100,34 @@ nav a:hover {
     background-color: var(--hover-bg-color);
 }
 
-nav a.idea-tool {
+/* Ensure the Idea Tool button matches the hamburger menu size */
+.idea-tool {
     position: absolute;
     left: 20px;
+    top: 10px;
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Vertically center */
+    justify-content: center; /* Horizontally center */
+    padding: 5px 10px; /* Compact padding */
+    background-color: var(--btn-bg-color);
+    color: var(--btn-text-color);
+    font-size: 20px; /* Adjusted font size */
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    height: 45px; /* Same height as the hamburger menu */
+    width: 100px; /* Set consistent width */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+.idea-tool:hover {
+    background-color: var(--hover-bg-color);
+    transform: scale(1.05);
+}
+
+.idea-tool:active {
+    transform: scale(0.95);
 }
 
 /* Page Containers */
@@ -426,4 +451,68 @@ nav a.idea-tool {
     background-color: var(--input-bg-color);
     color: var(--text-color);
     cursor: pointer;
+}
+
+/* Default: Hide the hamburger menu on larger screens */
+.menu-toggle {
+    display: none; /* Hidden by default for non-mobile views */
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+    background-color: var(--btn-bg-color);
+    color: var(--btn-text-color);
+    padding: 5px 15px; /* Balanced padding */
+    border-radius: 5px;
+    height: 45px; /* Slightly adjusted height for consistency */
+    line-height: 45px; /* Aligns the icon vertically */
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+
+    header {
+        padding-bottom: 75px; /* Adds space below the header */
+    }
+
+    .idea-tool {
+        position: fixed;
+        left: 20px;
+        top: 10px;
+        z-index: 100;
+    }
+
+    /* Show hamburger menu only on mobile view */
+    .menu-toggle {
+        display: block; /* Visible only in mobile view */
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 10px; /* Slightly shifted inward to reduce overall width */
+        background-color: var(--bg-color);
+        border: 1px solid var(--border-color);
+        width: 100px; /* Reduced width for a less wide appearance */
+        padding: 10px;
+        z-index: 99;
+        border-radius: 5px; /* Optional: match the menu's rounded corners */
+    }
+
+    nav a {
+        text-align: left;
+        padding: 10px 30px;
+        font-size: 16px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    nav.show {
+        display: flex;
+    }
 }

@@ -9,9 +9,10 @@
 </head>
 <body>
     <header>
+        <a href="{{ url_for('idea_tool') }}" class="idea-tool">Idea Tool</a>
+        <div class="menu-toggle">☰</div>
         <nav>
             <!-- Idea Tool link is given a special class to position it at top-left -->
-            <a href="{{ url_for('idea_tool') }}" class="idea-tool">Idea Tool</a>
             <!-- Other links remain centered -->
             <a href="{{ url_for('home') }}">Home</a>
             <a href="{{ url_for('about') }}">About</a>

@@ -94,3 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', theme);
     }
 });
+
+document.querySelector('.menu-toggle').addEventListener('click', () => {
+    const nav = document.querySelector('nav');
+    nav.classList.toggle('show');
+});
