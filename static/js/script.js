@@ -7,95 +7,90 @@ document.addEventListener('DOMContentLoaded', () => {
     const backButton = document.getElementById('back_btn');
     const themeSelector = document.getElementById('theme_selector');
 
-    // Ensure the result box is hidden on page load
-    if (resultBox) {
-        resultBox.classList.add('hidden');
+    // Ensure themeSelector checks
+    if (themeSelector) {
+        themeSelector.addEventListener('change', (e) => {
+            setTheme(e.target.value);
+        });
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        themeSelector.value = savedTheme;
+        setTheme(savedTheme);
     }
 
-    // Function to simulate typing effect
-    const typeText = (element, text, speed = 50) => {
-        element.textContent = '';
-        let index = 0;
+    // Only run the idea generation logic if those elements exist
+    if (userInput && styleSelect && resultBox && resultText && backButton) {
+        // Idea generation logic here
+        resultBox.classList.add('hidden');
 
-        const type = () => {
-            if (index < text.length) {
-                element.textContent += text[index];
-                index++;
-                setTimeout(type, speed);
-            }
+        const typeText = (element, text, speed = 50) => {
+            element.textContent = '';
+            let index = 0;
+            const type = () => {
+                if (index < text.length) {
+                    element.textContent += text[index++];
+                    setTimeout(type, speed);
+                }
+            };
+            type();
         };
 
-        type();
-    };
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const inputValue = userInput.value.trim();
+                const styleValue = styleSelect.value;
 
-    // Form submission handler
-    if (form) {
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const inputValue = userInput.value.trim();
-            const styleValue = styleSelect.value;
-
-            if (!inputValue) {
-                alert('Please provide some input before generating ideas.');
-                return;
-            }
-
-            // Show the result box immediately
-            resultText.textContent = 'Generating your idea...';
-            resultBox.classList.remove('hidden');
-            resultBox.classList.add('show-result');
-
-            try {
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: new URLSearchParams({
-                        'user_input': inputValue,
-                        'style_choice': styleValue
-                    })
-                });
-
-                const text = await response.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(text, 'text/html');
-                const resultDiv = doc.querySelector('#result'); // Hidden div containing the expanded idea
-
-                if (resultDiv) {
-                    typeText(resultText, resultDiv.textContent, 30); // Typing speed is 30ms per character
-                } else {
-                    resultText.textContent = 'No result returned.';
+                if (!inputValue) {
+                    alert('Please provide some input before generating ideas.');
+                    return;
                 }
-            } catch (err) {
-                console.error(err);
-                resultText.textContent = 'An error occurred while generating the idea. Please try again.';
-            }
-        });
-    }
 
-    // Handle back button functionality
-    if (backButton) {
+                resultText.textContent = 'Generating your idea...';
+                resultBox.classList.remove('hidden');
+                resultBox.classList.add('show-result');
+
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: new URLSearchParams({
+                            'user_input': inputValue,
+                            'style_choice': styleValue
+                        })
+                    });
+
+                    const text = await response.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(text, 'text/html');
+                    const resultDiv = doc.querySelector('#result');
+
+                    if (resultDiv) {
+                        typeText(resultText, resultDiv.textContent, 30);
+                    } else {
+                        resultText.textContent = 'No result returned.';
+                    }
+                } catch (err) {
+                    console.error(err);
+                    resultText.textContent = 'An error occurred while generating the idea. Please try again.';
+                }
+            });
+        }
+
         backButton.addEventListener('click', () => {
             resultBox.classList.remove('show-result');
             resultBox.classList.add('hidden');
-            userInput.value = ''; // Clear the textarea for new input
-            resultText.textContent = ''; // Clear the result text
+            userInput.value = '';
+            resultText.textContent = '';
         });
+    } else {
+        // On pages like contact, user_input and style_choice don't exist.
+        // The form can submit normally via HTML without this code interfering.
+        console.log("This page does not have the idea generation form.");
     }
 
-    // Function to switch themes
-    const setTheme = (theme) => {
+    function setTheme(theme) {
         const root = document.documentElement;
         root.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme); // Save theme to localStorage
-    };
-
-    // Theme selector handler
-    themeSelector.addEventListener('change', (e) => {
-        setTheme(e.target.value);
-    });
-
-    // Load the saved theme on page load
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    themeSelector.value = savedTheme;
-    setTheme(savedTheme);
+        localStorage.setItem('theme', theme);
+    }
 });
