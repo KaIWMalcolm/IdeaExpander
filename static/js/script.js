@@ -6,6 +6,52 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultText = document.getElementById('result_text');
     const backButton = document.getElementById('back_btn');
     const themeSelector = document.getElementById('theme_selector');
+    const recentHistory = document.getElementById('recent-history'); // Container for history
+    const expandedHistory = document.getElementById('expanded-history'); // Expanded history box
+
+    // Array to store local history
+    let localHistory = JSON.parse(localStorage.getItem('ideaHistory')) || [];
+
+    // Function to save the current generation to local history
+    const saveToHistory = (input, result) => {
+        if (localHistory.length >= 10) {
+            localHistory.shift(); // Remove the oldest history if we have 10
+        }
+        localHistory.push({ input, result });
+        localStorage.setItem('ideaHistory', JSON.stringify(localHistory));
+        updateHistoryUI();
+    };
+
+    // Function to update the history UI
+    const updateHistoryUI = () => {
+        recentHistory.innerHTML = ''; // Clear the current history display
+    
+        // Display the most recent prompts at the top
+        localHistory
+            .slice() // Create a copy of the localHistory array
+            .reverse() // Reverse the order for top-down display
+            .forEach((entry, index) => {
+                const button = document.createElement('button');
+                button.classList.add('history-button');
+                button.textContent = `${entry.input}`;
+                button.addEventListener('click', () => toggleExpandedHistory(localHistory.length - 1 - index));
+                recentHistory.appendChild(button);
+            });
+    };
+
+    // Function to toggle expanded history visibility
+    const toggleExpandedHistory = (index) => {
+        if (expandedHistory.style.display === 'block') {
+            expandedHistory.style.display = 'none';
+            expandedHistory.innerHTML = '';
+        } else {
+            expandedHistory.style.display = 'block';
+            expandedHistory.innerHTML = `
+                <strong>Prompt:</strong> ${localHistory[index].input}<br>
+                <strong>Result:</strong> ${localHistory[index].result}
+            `;
+        }
+    };
 
     // Ensure themeSelector checks
     if (themeSelector) {
@@ -19,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Only run the idea generation logic if those elements exist
     if (userInput && styleSelect && resultBox && resultText && backButton) {
-        // Idea generation logic here
         resultBox.classList.add('hidden');
 
         const typeText = (element, text, speed = 30) => {
@@ -65,7 +110,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     const resultDiv = doc.querySelector('#result');
 
                     if (resultDiv) {
-                        typeText(resultText, resultDiv.textContent, 10);
+                        const resultContent = resultDiv.textContent.trim();
+                        typeText(resultText, resultContent, 10);
+                        saveToHistory(inputValue, resultContent); // Save to local history
                     } else {
                         resultText.textContent = 'No result returned.';
                     }
@@ -83,8 +130,6 @@ document.addEventListener('DOMContentLoaded', () => {
             resultText.textContent = '';
         });
     } else {
-        // On pages like contact, user_input and style_choice don't exist.
-        // The form can submit normally via HTML without this code interfering.
         console.log("This page does not have the idea generation form.");
     }
 
@@ -93,6 +138,9 @@ document.addEventListener('DOMContentLoaded', () => {
         root.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
     }
+
+    // Initialize the history UI
+    updateHistoryUI();
 });
 
 document.querySelector('.menu-toggle').addEventListener('click', () => {

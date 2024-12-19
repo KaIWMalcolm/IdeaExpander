@@ -296,6 +296,57 @@ nav a:hover {
     transform: scale(0.95);
 }
 
+#recent-history {
+    margin-top: 17px;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    padding: 10px;
+    background: var(--input-bg-color);
+    color: var(--text-color);
+    font-size: 14px;
+    max-height: 170px; /* Reasonable height */
+    overflow-y: auto;
+}
+
+.history-button {
+    width: 100%; /* Ensures the button spans the width of the container */
+    text-align: center; /* Centers the text inside the button */
+    font-weight: bold; /* Makes the text bold */
+    padding: 10px; /* Adds some padding for better appearance */
+    margin: 3px 0; /* Adds spacing between buttons */
+    background-color: var(--btn-bg-color); /* Matches the theme button color */
+    color: var(--btn-text-color); /* Matches the theme text color */
+    border: 1px solid var(--border-color); /* Adds a border */
+    border-radius: 5px; /* Adds rounded corners */
+    cursor: pointer; /* Makes the cursor a pointer on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Adds hover effects */
+}
+
+.history-button:hover {
+    background-color: var(--hover-bg-color); /* Changes background color on hover */
+    transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+.history-button:active {
+    transform: scale(0.95); /* Pressed button effect */
+}
+
+#expanded-history {
+    max-height: 165px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 2px solid var(--border-color);
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    overflow-y: auto;
+    display: none; /* Hidden by default */
+}
+
+.hidden {
+    display: none;
+}
+
 /* Input area for textarea and button */
 .input-area {
     position: relative;
