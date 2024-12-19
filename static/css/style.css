@@ -1,15 +1,15 @@
-/* Default Theme Variables */
+/* Default theme variables */
 :root {
-    --bg-color: #ffffff;
-    --text-color: #333333;
-    --border-color: #333333;
-    --btn-bg-color: #333333;
-    --btn-text-color: #ffffff;
-    --hover-bg-color: #a8a8a8;
-    --input-bg-color: #ffffff;
+    --bg-color: #ffffff; /* Light background */
+    --text-color: #333333; /* Dark text */
+    --border-color: #333333; /* Border color */
+    --btn-bg-color: #333333; /* Button background */
+    --btn-text-color: #ffffff; /* Button text */
+    --hover-bg-color: #a8a8a8; /* Link hover background */
+    --input-bg-color: #ffffff; /* Input field background */
 }
 
-/* Dark Theme Variables */
+/* Dark theme variables */
 [data-theme="dark"] {
     --bg-color: #121212;
     --text-color: #ffffff;
@@ -20,7 +20,7 @@
     --input-bg-color: #1e1e1e;
 }
 
-/* Mango Theme Variables */
+/* Mango theme variables */
 [data-theme="mango"] {
     --bg-color: #E6BD91;
     --text-color: #4B3226;
@@ -31,7 +31,7 @@
     --input-bg-color: #E3D9C5;
 }
 
-/* Avocado Theme Variables */
+/* Avocado theme variables */
 [data-theme="avocado"] {
     --bg-color: #ABE6A1;
     --text-color: #2E402B;
@@ -42,7 +42,7 @@
     --input-bg-color: #D5E6BE;
 }
 
-/* Sunset Theme Variables */
+/* Sunset theme variables */
 [data-theme="sunset"] {
     --bg-color: #E6765E;
     --text-color: #4B2320;
@@ -53,7 +53,7 @@
     --input-bg-color: #E3B8A1;
 }
 
-/* Ocean Theme Variables */
+/* Ocean theme variables */
 [data-theme="ocean"] {
     --bg-color: #9EE6E2;
     --text-color: #123B49;
@@ -64,7 +64,7 @@
     --input-bg-color: #E1E2E3;
 }
 
-/* Global Styles */
+/* Global styles */
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
@@ -106,7 +106,6 @@ nav a.idea-tool {
 }
 
 /* Page Containers */
-.idea-tool-container,
 .home-container,
 .about-container,
 .contact-container {
@@ -119,14 +118,102 @@ nav a.idea-tool {
     color: var(--text-color);
 }
 
-.contact-container {
+/* Idea tool container styling */
+.idea-tool-container {
+    position: relative;
+    width: 90%;
     max-width: 800px;
     margin: 40px auto;
-    padding: 20px;
-    background: var(--input-bg-color);
+}
+
+/* Dropdown in top right */
+.style-dropdown {
+    position: absolute;
+    top: -40px; /* Adjusted to be above the input box */
+    right: 10px;
+    font-size: 14px;
+}
+
+.style-dropdown select {
+    font-size: 16px;
+    padding: 5px 10px;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+/* Home container */
+.home-container {
+    text-align: center;
+}
+
+.home-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.home-container p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Big button styling */
+.big-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--btn-text-color);
+    background-color: var(--btn-bg-color);
     border: 2px solid var(--border-color);
     border-radius: 10px;
-    color: var(--text-color);
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.big-button:hover {
+    background-color: var(--hover-bg-color);
+    transform: scale(1.05);
+}
+
+.big-button:active {
+    transform: scale(0.95);
+}
+
+/* About container */
+.about-container {
+    text-align: left;
+}
+
+.about-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-container h2 {
+    font-size: 1.8rem;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.about-container p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Contact container */
+.contact-container {
+    text-align: left;
 }
 
 .contact-form {
@@ -145,7 +232,7 @@ nav a.idea-tool {
 .form-group {
     display: flex;
     flex-direction: column;
-    flex: 1; /* Allow both fields to expand evenly */
+    flex: 1;
 }
 
 .form-group label {
@@ -172,18 +259,26 @@ nav a.idea-tool {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .contact-submit:hover {
     background: var(--hover-bg-color);
+    transform: scale(1.05);
 }
 
-/* Input Area */
+.contact-submit:active {
+    transform: scale(0.95);
+}
+
+/* Input area for textarea and button */
 .input-area {
+    position: relative;
     margin-top: 50px;
     display: flex;
     flex-direction: column;
     height: 33vh;
+    align-items: stretch;
 }
 
 #user_input {
@@ -195,7 +290,7 @@ nav a.idea-tool {
     border-radius: 5px;
     background-color: var(--input-bg-color);
     color: var(--text-color);
-    padding-right: 60px;
+    padding-right: 60px; /* Space for the button */
 }
 
 #user_input:focus {
@@ -247,7 +342,6 @@ nav a.idea-tool {
     border-color: #c3e6cb;
 }
 
-/* Animated Result Box */
 #result_box {
     position: fixed;
     top: 50%;
@@ -259,10 +353,48 @@ nav a.idea-tool {
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     z-index: 100;
+    flex-direction: column;
+    justify-content: space-between;
     transform: translate(-50%, -50%);
     opacity: 0;
 }
 
+#result_content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+}
+
+#result_text {
+    flex: 1;
+    overflow-y: auto;
+    font-size: 16px;
+    padding: 10px;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    background: var(--input-bg-color);
+    color: var(--text-color);
+    white-space: pre-wrap;
+}
+
+#back_btn {
+    align-self: flex-end;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: var(--btn-bg-color);
+    color: var(--btn-text-color);
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#back_btn:hover {
+    background: var(--hover-bg-color);
+}
+
+/* Keep the animation and show-result classes as before */
 .show-result {
     display: flex;
     animation: expand 0.5s forwards;

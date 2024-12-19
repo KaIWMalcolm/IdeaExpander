@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Idea generation logic here
         resultBox.classList.add('hidden');
 
-        const typeText = (element, text, speed = 50) => {
+        const typeText = (element, text, speed = 30) => {
             element.textContent = '';
             let index = 0;
             const type = () => {
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const resultDiv = doc.querySelector('#result');
 
                     if (resultDiv) {
-                        typeText(resultText, resultDiv.textContent, 30);
+                        typeText(resultText, resultDiv.textContent, 10);
                     } else {
                         resultText.textContent = 'No result returned.';
                     }
