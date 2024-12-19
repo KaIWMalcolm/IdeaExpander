@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tags for document encoding and responsive design -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <!-- Import Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    
+    <!-- Page title -->
     <title>Idea Expander</title>
 </head>
 <body>
+    <!-- Header containing navigation and primary tools -->
     <header>
+        <!-- Link to the Idea Tool page -->
         <a href="{{ url_for('idea_tool') }}" class="idea-tool">Idea Tool</a>
+        
+        <!-- Hamburger menu toggle for mobile view -->
         <div class="menu-toggle">☰</div>
+        
+        <!-- Navigation bar with links to other pages -->
         <nav>
-            <!-- Idea Tool link is given a special class to position it at top-left -->
-            <!-- Other links remain centered -->
+            <!-- Idea Tool link (special class for top-left positioning) -->
             <a href="{{ url_for('home') }}">Home</a>
             <a href="{{ url_for('about') }}">About</a>
             <a href="{{ url_for('contact') }}">Contact</a>
         </nav>
     </header>
+    
+    <!-- Main content area where specific page content is injected -->
     <main>
         {% block content %}{% endblock %}
+        
+        <!-- Theme selector dropdown for users to switch color themes -->
         <div class="theme-dropdown">
             <select id="theme_selector">
                 <option value="light">Light</option>
@@ -32,6 +48,8 @@
             </select>
         </div>
     </main>
+    
+    <!-- External JavaScript file -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

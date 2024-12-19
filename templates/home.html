@@ -1,17 +1,24 @@
 {% extends 'base.html' %}
+
 {% block content %}
 <div class="home-container">
+    <!-- Heading for the home page -->
     <h1>Welcome to Idea Expander</h1>
+    
+    <!-- Introduction paragraph about the tool -->
     <p>
         Struggling to refine your ideas? The Idea Expander is here to help! 
         Whether you're brainstorming a creative story, developing a business plan, 
         or crafting something unique, this tool uses AI to expand and refine your ideas.
     </p>
+    
+    <!-- Instructions on how to use the tool -->
     <p>
         Simply enter your idea in the input box, choose a style (Default, Writing Prompt, or Business Idea),
         and click <strong>Generate</strong> to receive an expanded version. 
-        It's that simple!
     </p>
+    
+    <!-- Button to navigate to the Idea Tool page -->
     <a href="{{ url_for('idea_tool') }}" class="big-button">Get Started with the Idea Tool</a>
 </div>
 {% endblock %}

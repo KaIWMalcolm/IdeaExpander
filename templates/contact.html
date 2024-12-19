@@ -1,27 +1,42 @@
 {% extends 'base.html' %}
+
 {% block content %}
 <div class="contact-container">
+    <!-- Page heading -->
     <h1>Contact Us</h1>
-    <p>Have questions, feedback, or suggestions? We’d love to hear from you! Use the form below to get in touch.</p>
+    <p>
+        Have questions, feedback, or suggestions? We’d love to hear from you! 
+        Use the form below to get in touch.
+    </p>
 
+    <!-- Error message display -->
     {% if error %}
     <div class="error">{{ error }}</div>
     {% endif %}
+
+    <!-- Success message display -->
     {% if success %}
     <div class="success">{{ success }}</div>
     {% endif %}
 
+    <!-- Contact form -->
     <form method="POST" action="{{ url_for('contact') }}" class="contact-form">
+        <!-- Form row containing email and message inputs -->
         <div class="form-row">
+            <!-- Email input field -->
             <div class="form-group">
                 <label for="email">Your Email:</label>
                 <input type="email" name="email" id="email" placeholder="Enter your email" required>
             </div>
+            
+            <!-- Message textarea -->
             <div class="form-group">
                 <label for="message">Your Message:</label>
                 <textarea name="message" id="message" rows="6" placeholder="Type your message here..." required></textarea>
             </div>
         </div>
+
+        <!-- Submit button -->
         <button type="submit" class="contact-submit">Send Message</button>
     </form>
 </div>

@@ -1,149 +1,135 @@
 /* Default theme variables */
 :root {
-    --bg-color: #ffffff;
-    --text-color: #333333;
-    --border-color: #333333;
-    --btn-bg-color: #333333;
-    --btn-text-color: #ffffff;
-    --hover-bg-color: #a8a8a8;
-    --input-bg-color: #ffffff;
+    --bg-color: #ffffff; /* Default background color */
+    --text-color: #333333; /* Default text color */
+    --border-color: #333333; /* Default border color */
+    --btn-bg-color: #333333; /* Default button background color */
+    --btn-text-color: #ffffff; /* Default button text color */
+    --hover-bg-color: #a8a8a8; /* Background color on hover */
+    --input-bg-color: #ffffff; /* Input field background color */
 }
 
 /* Dark theme variables */
 [data-theme="dark"] {
-    --bg-color: #121212;
-    --text-color: #ffffff;
-    --border-color: #444444;
-    --btn-bg-color: #444444;
-    --btn-text-color: #ffffff;
-    --hover-bg-color: #555555;
-    --input-bg-color: #1e1e1e;
+    --bg-color: #121212; /* Background for dark theme */
+    --text-color: #ffffff; /* Text color for dark theme */
+    --border-color: #444444; /* Border color for dark theme */
+    --btn-bg-color: #444444; /* Button background for dark theme */
+    --btn-text-color: #ffffff; /* Button text color for dark theme */
+    --hover-bg-color: #555555; /* Hover color for dark theme */
+    --input-bg-color: #1e1e1e; /* Input field background for dark theme */
 }
 
 /* Mango theme variables */
 [data-theme="mango"] {
-    --bg-color: #E6BD91;
-    --text-color: #4B3226;
-    --border-color: #E6D391;
-    --btn-bg-color: #E6AF91;
-    --btn-text-color: #4B3226;
-    --hover-bg-color: #E5C990;
-    --input-bg-color: #E3D9C5;
+    --bg-color: #E6BD91; /* Background for mango theme */
+    --text-color: #4B3226; /* Text color for mango theme */
+    --border-color: #E6D391; /* Border color for mango theme */
+    --btn-bg-color: #E6AF91; /* Button background for mango theme */
+    --btn-text-color: #4B3226; /* Button text color for mango theme */
+    --hover-bg-color: #E5C990; /* Hover color for mango theme */
+    --input-bg-color: #E3D9C5; /* Input field background for mango theme */
 }
 
 /* Avocado theme variables */
 [data-theme="avocado"] {
-    --bg-color: #ABE6A1;
-    --text-color: #2E402B;
-    --border-color: #E6DDA1;
-    --btn-bg-color: #C8E6A0;
-    --btn-text-color: #2E402B;
-    --hover-bg-color: #A1E6B0;
-    --input-bg-color: #D5E6BE;
+    --bg-color: #ABE6A1; /* Background for avocado theme */
+    --text-color: #2E402B; /* Text color for avocado theme */
+    --border-color: #E6DDA1; /* Border color for avocado theme */
+    --btn-bg-color: #C8E6A0; /* Button background for avocado theme */
+    --btn-text-color: #2E402B; /* Button text color for avocado theme */
+    --hover-bg-color: #A1E6B0; /* Hover color for avocado theme */
+    --input-bg-color: #D5E6BE; /* Input field background for avocado theme */
 }
 
 /* Sunset theme variables */
 [data-theme="sunset"] {
-    --bg-color: #E6765E;
-    --text-color: #4B2320;
-    --border-color: #E6A55E;
-    --btn-bg-color: #E65E5E;
-    --btn-text-color: #4B2320;
-    --hover-bg-color: #E6B85E;
-    --input-bg-color: #E3B8A1;
+    --bg-color: #E6765E; /* Background for sunset theme */
+    --text-color: #4B2320; /* Text color for sunset theme */
+    --border-color: #E6A55E; /* Border color for sunset theme */
+    --btn-bg-color: #E65E5E; /* Button background for sunset theme */
+    --btn-text-color: #4B2320; /* Button text color for sunset theme */
+    --hover-bg-color: #E6B85E; /* Hover color for sunset theme */
+    --input-bg-color: #E3B8A1; /* Input field background for sunset theme */
 }
 
 /* Ocean theme variables */
 [data-theme="ocean"] {
-    --bg-color: #9EE6E2;
-    --text-color: #123B49;
-    --border-color: #9EBCE6;
-    --btn-bg-color: #9FD3E6;
-    --btn-text-color: #123B49;
-    --hover-bg-color: #9EA6E6;
-    --input-bg-color: #E1E2E3;
+    --bg-color: #9EE6E2; /* Background for ocean theme */
+    --text-color: #123B49; /* Text color for ocean theme */
+    --border-color: #9EBCE6; /* Border color for ocean theme */
+    --btn-bg-color: #9FD3E6; /* Button background for ocean theme */
+    --btn-text-color: #123B49; /* Button text color for ocean theme */
+    --hover-bg-color: #9EA6E6; /* Hover color for ocean theme */
+    --input-bg-color: #E1E2E3; /* Input field background for ocean theme */
 }
 
-/* Global styles */
+/* Global styles for all themes */
 body {
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    font-family: 'Roboto', sans-serif; /* Set font for body */
+    font-weight: bold; /* Bold text by default */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background-color: var(--bg-color); /* Apply theme background */
+    color: var(--text-color); /* Apply theme text color */
 }
 
 header {
-    border-bottom: 1px solid var(--border-color);
-    position: relative;
+    border-bottom: 1px solid var(--border-color); /* Header border */
+    position: relative; /* Position for navigation elements */
 }
 
 nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0;
+    display: flex; /* Flexbox for navigation alignment */
+    justify-content: center; /* Center navigation links */
+    align-items: center; /* Vertical alignment */
+    padding: 10px 0; /* Spacing for navigation area */
 }
 
 nav a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-size: 27px;
-    margin: 0 20px;
-    border-radius: 15px;
-    padding: 12px 17px;
-    transition: background-color 0.25s;
+    text-decoration: none; /* Remove underline */
+    color: var(--text-color); /* Apply theme text color */
+    font-size: 27px; /* Font size for navigation links */
+    margin: 0 20px; /* Spacing between links */
+    border-radius: 15px; /* Rounded edges for links */
+    padding: 12px 17px; /* Padding for clickable area */
+    transition: background-color 0.25s; /* Smooth hover effect */
 }
 
 nav a:hover {
-    background-color: var(--hover-bg-color);
+    background-color: var(--hover-bg-color); /* Change background on hover */
 }
 
 /* Idea Tool button */
 .idea-tool {
-    position: absolute;
-    left: 20px;
-    top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px 10px;
-    background-color: var(--btn-bg-color);
-    color: var(--btn-text-color);
-    font-size: 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    border: 1px solid var(--border-color);
-    height: 45px;
-    width: 100px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    text-align: center;
+    position: absolute; /* Fixed position for top-left placement */
+    left: 20px; /* Distance from left edge */
+    top: 10px; /* Distance from top edge */
+    display: flex; /* Flexbox for centering text */
+    align-items: center; /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+    padding: 5px 10px; /* Padding for button */
+    background-color: var(--btn-bg-color); /* Button background color */
+    color: var(--btn-text-color); /* Button text color */
+    font-size: 20px; /* Font size for button text */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid var(--border-color); /* Button border */
+    height: 45px; /* Fixed height for consistency */
+    width: 100px; /* Fixed width for consistency */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animation effects */
+    text-align: center; /* Center text in the button */
 }
 
 .idea-tool:hover {
-    background-color: var(--hover-bg-color);
-    transform: scale(1.05);
+    background-color: var(--hover-bg-color); /* Change color on hover */
+    transform: scale(1.05); /* Slight enlarge on hover */
 }
 
 .idea-tool:active {
-    transform: scale(0.95);
+    transform: scale(0.95); /* Shrink slightly when clicked */
 }
 
-/* Common container styling */
-.home-container,
-.about-container,
-.contact-container {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    background: var(--input-bg-color);
-    border: 2px solid var(--border-color);
-    border-radius: 10px;
-    color: var(--text-color);
-}
-
-/* Idea tool container */
 .idea-tool-container {
     position: relative;
     width: 90%;
@@ -151,416 +137,416 @@ nav a:hover {
     margin: 40px auto;
 }
 
-/* Style dropdown */
+/* Common container styles for content pages */
+.home-container,
+.about-container,
+.contact-container {
+    max-width: 800px; /* Maximum width for content */
+    margin: 40px auto; /* Center content with top/bottom spacing */
+    padding: 20px; /* Internal spacing */
+    background: var(--input-bg-color); /* Background color for containers */
+    border: 2px solid var(--border-color); /* Border for containers */
+    border-radius: 10px; /* Rounded edges */
+    color: var(--text-color); /* Apply theme text color */
+}
+
+/* Dropdown styling for the idea tool */
 .style-dropdown {
-    position: absolute;
-    top: -40px;
-    right: 10px;
-    font-size: 14px;
+    position: absolute; /* Positioned above input field */
+    top: -40px; /* Distance above input field */
+    right: 10px; /* Distance from right edge */
+    font-size: 14px; /* Font size for dropdown */
 }
 
 .style-dropdown select {
-    font-size: 16px;
-    padding: 5px 10px;
-    border: 2px solid var(--border-color);
-    border-radius: 5px;
-    background-color: var(--input-bg-color);
-    color: var(--text-color);
-    cursor: pointer;
-}
-
-/* Home container */
-.home-container {
-    text-align: center;
-}
-
-.home-container h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.home-container p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    font-size: 16px; /* Font size for dropdown options */
+    padding: 5px 10px; /* Padding inside dropdown */
+    border: 2px solid var(--border-color); /* Border for dropdown */
+    border-radius: 5px; /* Rounded corners */
+    background-color: var(--input-bg-color); /* Dropdown background */
+    color: var(--text-color); /* Dropdown text color */
+    cursor: pointer; /* Change cursor to pointer */
 }
 
 /* Utility classes */
 .hidden {
-    display: none;
+    display: none; /* Hide elements when applied */
 }
 
 /* Big button styling */
 .big-button {
-    display: inline-block;
-    padding: 15px 30px;
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: var(--btn-text-color);
-    background-color: var(--btn-bg-color);
-    border: 2px solid var(--border-color);
-    border-radius: 10px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block; /* Inline-block for flexible positioning */
+    padding: 15px 30px; /* Padding for larger clickable area */
+    font-size: 1.4rem; /* Larger font for emphasis */
+    font-weight: bold; /* Bold font for visibility */
+    color: var(--btn-text-color); /* Button text color */
+    background-color: var(--btn-bg-color); /* Button background color */
+    border: 2px solid var(--border-color); /* Button border styling */
+    border-radius: 10px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
 }
 
 .big-button:hover {
-    background-color: var(--hover-bg-color);
-    transform: scale(1.05);
+    background-color: var(--hover-bg-color); /* Change background on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
 }
 
 .big-button:active {
-    transform: scale(0.95);
+    transform: scale(0.95); /* Shrink button on click */
 }
 
-/* About container */
+/* About section styling */
 .about-container {
-    text-align: left;
+    text-align: left; /* Left-align content */
 }
 
 .about-container h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    text-align: center;
+    font-size: 2.5rem; /* Large font size for main heading */
+    margin-bottom: 20px; /* Space below heading */
+    text-align: center; /* Center-align the heading */
 }
 
 .about-container h2 {
-    font-size: 1.8rem;
-    margin-top: 20px;
-    margin-bottom: 15px;
+    font-size: 1.8rem; /* Medium font size for subheadings */
+    margin-top: 20px; /* Space above subheading */
+    margin-bottom: 15px; /* Space below subheading */
 }
 
 .about-container p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    font-size: 1.2rem; /* Paragraph font size */
+    line-height: 1.6; /* Spacing between lines */
+    margin-bottom: 20px; /* Space below paragraph */
 }
 
-/* Contact container */
+/* Contact section styling */
 .contact-container {
-    text-align: left;
+    text-align: left; /* Left-align content */
 }
 
 .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items in a column */
+    gap: 20px; /* Space between items */
 }
 
 .form-row {
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: flex; /* Arrange items in a row */
+    gap: 20px; /* Space between form groups */
+    justify-content: space-between; /* Space out items */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
 }
 
 .form-group {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Arrange items in a column */
+    flex: 1; /* Allow flexible growth */
 }
 
 .form-group label {
-    margin-bottom: 8px;
-    font-weight: normal;
+    margin-bottom: 8px; /* Space below label */
+    font-weight: normal; /* Normal font weight */
 }
 
 .form-group input,
 .form-group textarea {
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid var(--border-color);
-    border-radius: 5px;
-    background-color: var(--input-bg-color);
-    color: var(--text-color);
+    padding: 10px; /* Internal padding */
+    font-size: 16px; /* Input font size */
+    border: 2px solid var(--border-color); /* Input border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: var(--input-bg-color); /* Input background */
+    color: var(--text-color); /* Input text color */
 }
 
 .contact-submit {
-    align-self: flex-end;
-    padding: 10px 20px;
-    background: var(--btn-bg-color);
-    color: var(--btn-text-color);
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: flex-end; /* Align submit button to the right */
+    padding: 10px 20px; /* Internal padding */
+    background: var(--btn-bg-color); /* Button background */
+    color: var(--btn-text-color); /* Button text color */
+    font-size: 16px; /* Font size */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
 }
 
 .contact-submit:hover {
-    background: var(--hover-bg-color);
-    transform: scale(1.05);
+    background: var(--hover-bg-color); /* Change background on hover */
+    transform: scale(1.05); /* Slightly enlarge button */
 }
 
 .contact-submit:active {
-    transform: scale(0.95);
+    transform: scale(0.95); /* Shrink button on click */
 }
 
-/* History section */
+/* History section styling */
 #recent-history {
-    margin-top: 17px;
-    border: 2px solid var(--border-color);
-    border-radius: 5px;
-    padding: 10px;
-    background: var(--input-bg-color);
-    color: var(--text-color);
-    font-size: 14px;
-    max-height: 170px;
-    overflow-y: auto;
+    margin-top: 17px; /* Space above history */
+    border: 2px solid var(--border-color); /* Border around history */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Internal padding */
+    background: var(--input-bg-color); /* Background color */
+    color: var(--text-color); /* Text color */
+    font-size: 14px; /* Font size for history text */
+    max-height: 170px; /* Limit height with scrollbar */
+    overflow-y: auto; /* Add vertical scrollbar if needed */
 }
 
 .history-button {
-    width: 100%;
-    text-align: center;
-    font-weight: bold;
-    padding: 10px;
-    margin: 3px 0;
-    background-color: var(--btn-bg-color);
-    color: var(--btn-text-color);
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%; /* Full width buttons */
+    text-align: center; /* Center-align button text */
+    font-weight: bold; /* Bold text */
+    padding: 10px; /* Padding inside button */
+    margin: 3px 0; /* Space between buttons */
+    background-color: var(--btn-bg-color); /* Button background color */
+    color: var(--btn-text-color); /* Button text color */
+    border: 1px solid var(--border-color); /* Button border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
 }
 
 .history-button:hover {
-    background-color: var(--hover-bg-color);
-    transform: scale(1.02);
+    background-color: var(--hover-bg-color); /* Change background on hover */
+    transform: scale(1.02); /* Slightly enlarge button */
 }
 
 .history-button:active {
-    transform: scale(0.95);
+    transform: scale(0.95); /* Shrink button on click */
 }
 
 #expanded-history {
-    max-height: 165px;
-    margin-top: 10px;
-    padding: 10px;
-    border: 2px solid var(--border-color);
-    background-color: var(--input-bg-color);
-    color: var(--text-color);
-    border-radius: 5px;
-    overflow-y: auto;
-    display: none;
+    max-height: 165px; /* Limit height with scrollbar */
+    margin-top: 10px; /* Space above expanded history */
+    padding: 10px; /* Internal padding */
+    border: 2px solid var(--border-color); /* Border around expanded history */
+    background-color: var(--input-bg-color); /* Background color */
+    color: var(--text-color); /* Text color */
+    border-radius: 5px; /* Rounded corners */
+    overflow-y: auto; /* Add vertical scrollbar if needed */
+    display: none; /* Initially hidden */
 }
 
 /* Input area for textarea and button */
 .input-area {
-    position: relative;
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    height: 33vh;
-    align-items: stretch;
+    position: relative; /* Positioned relative for child elements */
+    margin-top: 50px; /* Space above input area */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items in a column */
+    height: 33vh; /* Set height as a percentage of viewport */
+    align-items: stretch; /* Stretch items to fill container */
 }
 
 #user_input {
-    flex: 1;
-    padding: 15px;
-    font-size: 16px;
-    resize: none;
-    border: 2px solid var(--border-color);
-    border-radius: 5px;
-    background-color: var(--input-bg-color);
-    color: var(--text-color);
-    padding-right: 60px;
+    flex: 1; /* Allow input to grow */
+    padding: 15px; /* Internal padding */
+    font-size: 16px; /* Font size for input text */
+    resize: none; /* Prevent resizing */
+    border: 2px solid var(--border-color); /* Input border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: var(--input-bg-color); /* Input background color */
+    color: var(--text-color); /* Input text color */
+    padding-right: 60px; /* Space for button */
 }
 
 #user_input:focus {
-    outline: none;
-    border-color: var(--hover-bg-color);
+    outline: none; /* Remove default focus outline */
+    border-color: var(--hover-bg-color); /* Highlight border on focus */
 }
 
 #generate_btn {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    padding: 8px 15px;
-    background: var(--btn-bg-color);
-    color: var(--btn-text-color);
-    font-size: 14px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    position: absolute; /* Positioned inside input area */
+    bottom: 10px; /* Distance from bottom edge */
+    right: 10px; /* Distance from right edge */
+    padding: 8px 15px; /* Internal padding */
+    background: var(--btn-bg-color); /* Button background */
+    color: var(--btn-text-color); /* Button text color */
+    font-size: 14px; /* Font size */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
 }
 
 #generate_btn:hover {
-    background: var(--hover-bg-color);
+    background: var(--hover-bg-color); /* Change background on hover */
 }
 
 /* Response styling */
 .result,
 .error,
 .success {
-    margin-top: 10px;
-    padding: 15px;
-    border-radius: 5px;
-    font-weight: normal;
-    border: 2px solid var(--border-color);
+    margin-top: 10px; /* Space above response */
+    padding: 15px; /* Internal padding */
+    border-radius: 5px; /* Rounded corners */
+    font-weight: normal; /* Normal font weight */
+    border: 2px solid var(--border-color); /* Border around response */
 }
 
+/* Result container styling for different types of responses */
 .result {
-    background: var(--input-bg-color);
+    background: var(--input-bg-color); /* Neutral background for generic results */
 }
 
 .error {
-    background: #f8d7da;
-    color: #721c24;
-    border-color: #f5c6cb;
+    background: #f8d7da; /* Light red background to indicate error */
+    color: #721c24; /* Dark red text color for contrast */
+    border-color: #f5c6cb; /* Soft red border for error messages */
 }
 
 .success {
-    background: #d4edda;
-    color: #155724;
-    border-color: #c3e6cb;
+    background: #d4edda; /* Light green background for success messages */
+    color: #155724; /* Dark green text color for readability */
+    border-color: #c3e6cb; /* Soft green border for success feedback */
 }
 
-/* Result box and animation */
+/* Main result box and animation */
 #result_box {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 85%;
-    height: 85%;
-    background: var(--bg-color);
-    border: 2px solid var(--border-color);
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    z-index: 100;
-    flex-direction: column;
-    justify-content: space-between;
-    transform: translate(-50%, -50%);
-    opacity: 0;
+    position: fixed; /* Fixed position to center on screen */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    width: 85%; /* Large width for displaying content */
+    height: 85%; /* Large height for detailed results */
+    background: var(--bg-color); /* Theme-based background */
+    border: 2px solid var(--border-color); /* Border for distinction */
+    border-radius: 10px; /* Smooth rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Subtle shadow for elevation */
+    z-index: 100; /* Bring result box to the front */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Space out content */
+    transform: translate(-50%, -50%); /* Center box with transform */
+    opacity: 0; /* Initially hidden for animation */
 }
 
 #result_content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 20px;
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Stack content */
+    height: 100%; /* Full height usage */
+    padding: 20px; /* Padding for spacing */
 }
 
 #result_text {
-    flex: 1;
-    overflow-y: auto;
-    font-size: 16px;
-    padding: 10px;
-    border: 2px solid var(--border-color);
-    border-radius: 5px;
-    background: var(--input-bg-color);
-    color: var(--text-color);
-    white-space: pre-wrap;
+    flex: 1; /* Fill available space */
+    overflow-y: auto; /* Add scrollbar if content overflows */
+    font-size: 16px; /* Standard readable text size */
+    padding: 10px; /* Padding inside the text area */
+    border: 2px solid var(--border-color); /* Border for distinction */
+    border-radius: 5px; /* Smooth edges */
+    background: var(--input-bg-color); /* Match input background */
+    color: var(--text-color); /* Match theme text color */
+    white-space: pre-wrap; /* Preserve white spaces and line breaks */
 }
 
 #back_btn {
-    align-self: flex-end;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background: var(--btn-bg-color);
-    color: var(--btn-text-color);
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    align-self: flex-end; /* Align button to the right */
+    margin-top: 10px; /* Space above button */
+    padding: 10px 20px; /* Internal padding */
+    background: var(--btn-bg-color); /* Theme button background */
+    color: var(--btn-text-color); /* Theme button text */
+    font-size: 16px; /* Readable font size */
+    border: none; /* No border for modern design */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
 }
 
 #back_btn:hover {
-    background: var(--hover-bg-color);
+    background: var(--hover-bg-color); /* Change color on hover */
 }
 
+/* Animation for showing the result box */
 .show-result {
-    display: flex;
-    animation: expand 0.5s forwards;
+    display: flex; /* Flexbox layout */
+    animation: expand 0.5s forwards; /* Expand animation */
 }
 
+/* Keyframes for expanding animation */
 @keyframes expand {
     0% {
-        transform: translate(-50%, -50%) scale(0);
-        opacity: 0;
+        transform: translate(-50%, -50%) scale(0); /* Start small and invisible */
+        opacity: 0; /* Fully transparent */
     }
     100% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
+        transform: translate(-50%, -50%) scale(1); /* Full size and position */
+        opacity: 1; /* Fully visible */
     }
 }
 
-/* Theme dropdown */
+/* Theme dropdown styles */
 .theme-dropdown {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 16px;
+    position: fixed; /* Fixed to bottom right */
+    bottom: 20px; /* Distance from bottom */
+    right: 20px; /* Distance from right */
+    font-size: 16px; /* Font size for dropdown */
 }
 
 .theme-dropdown select {
-    padding: 5px 10px;
-    border-radius: 5px;
-    border: 2px solid var(--border-color);
-    background-color: var(--input-bg-color);
-    color: var(--text-color);
-    cursor: pointer;
+    padding: 5px 10px; /* Internal padding */
+    border-radius: 5px; /* Rounded corners */
+    border: 2px solid var(--border-color); /* Border matches theme */
+    background-color: var(--input-bg-color); /* Dropdown background */
+    color: var(--text-color); /* Dropdown text color */
+    cursor: pointer; /* Pointer cursor on hover */
 }
 
-/* Hamburger menu */
+/* Hamburger menu styles for mobile */
 .menu-toggle {
-    display: none;
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    font-size: 28px;
-    cursor: pointer;
-    background-color: var(--btn-bg-color);
-    color: var(--btn-text-color);
-    padding: 5px 15px;
-    border-radius: 5px;
-    height: 45px;
-    line-height: 45px;
-    z-index: 100;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+    display: none; /* Hidden by default */
+    position: absolute; /* Position near header */
+    right: 20px; /* Align to the right */
+    top: 10px; /* Align to the top */
+    font-size: 28px; /* Large size for visibility */
+    cursor: pointer; /* Pointer cursor for interaction */
+    background-color: var(--btn-bg-color); /* Theme button background */
+    color: var(--btn-text-color); /* Theme button text */
+    padding: 5px 15px; /* Internal padding */
+    border-radius: 5px; /* Rounded corners */
+    height: 45px; /* Set consistent height */
+    line-height: 45px; /* Center text vertically */
+    z-index: 100; /* High z-index to appear above other elements */
+    text-align: center; /* Center align text */
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Align items horizontally */
 }
 
-/* Responsive styles */
+/* Responsive adjustments */
 @media (max-width: 768px) {
     header {
-        padding-bottom: 75px;
+        padding-bottom: 75px; /* Add extra space for mobile header */
     }
 
     .idea-tool {
-        position: fixed;
-        left: 20px;
-        top: 10px;
-        z-index: 100;
+        position: fixed; /* Fixed position for visibility */
+        left: 20px; /* Distance from left */
+        top: 10px; /* Distance from top */
+        z-index: 100; /* Keep above other elements */
     }
 
     .menu-toggle {
-        display: block;
+        display: block; /* Visible only on small screens */
     }
 
     nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 10px;
-        background-color: var(--bg-color);
-        border: 1px solid var(--border-color);
-        width: 100px;
-        padding: 10px;
-        z-index: 99;
-        border-radius: 5px;
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute; /* Absolute positioning */
+        top: 70px; /* Below menu toggle */
+        right: 10px; /* Align to the right */
+        background-color: var(--bg-color); /* Theme background */
+        border: 1px solid var(--border-color); /* Match theme border */
+        width: 100px; /* Compact width */
+        padding: 10px; /* Internal padding */
+        z-index: 99; /* Below menu toggle */
+        border-radius: 5px; /* Rounded corners */
     }
 
     nav a {
-        text-align: left;
-        padding: 10px 30px;
-        font-size: 16px;
-        border-bottom: 1px solid var(--border-color);
+        text-align: left; /* Align links to the left */
+        padding: 10px 30px; /* Padding for spacing */
+        font-size: 16px; /* Font size for links */
+        border-bottom: 1px solid var(--border-color); /* Divider between links */
     }
 
     nav.show {
-        display: flex;
+        display: flex; /* Show links when menu is active */
     }
 }

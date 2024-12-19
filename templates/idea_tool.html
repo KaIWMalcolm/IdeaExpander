@@ -1,40 +1,49 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
+
 {% block content %}
 <div class="idea-tool-container">
+    <!-- Form for submitting user input -->
     <form method="POST" action="{{ url_for('idea_tool') }}" id="idea-form">
         <div class="input-area">
-            <!-- Dropdown menu positioned above the textarea -->
+            <!-- Dropdown menu for selecting style -->
             <div class="style-dropdown">
                 <select id="style_choice" name="style_choice">
+                    <!-- Options for different styles -->
                     <option value="default" {% if selected_style == 'default' %}selected{% endif %}>Default</option>
                     <option value="writing prompt" {% if selected_style == 'writing prompt' %}selected{% endif %}>Writing Prompt</option>
                     <option value="business/product idea" {% if selected_style == 'business/product idea' %}selected{% endif %}>Business/Product Idea</option>
                 </select>
             </div>
-            <!-- Text area and button -->
+            <!-- Text area for user input -->
             <textarea id="user_input" name="user_input" placeholder="Enter your idea here..."></textarea>
+            <!-- Submit button -->
             <button id="generate_btn" type="submit">Generate</button>
         </div>
     </form>
     
     {% if result %}
-    <!-- Hidden div to store the expanded idea so JS can extract it -->
+    <!-- Hidden div to store the expanded idea so it can be used by JavaScript -->
     <div id="result" style="display:none;">{{ result }}</div>
     {% endif %}
     
-    <!-- This container will show the animated result box -->
+    <!-- Animated result box for displaying generated ideas -->
     <div id="result_box" class="hidden">
         <div id="result_content">
+            <!-- Container for displaying the generated text -->
             <div id="result_text"></div>
+            <!-- Button to return to the input form -->
             <button id="back_btn">Back</button>
         </div>
     </div>
 
-    <!-- History section -->
+    <!-- History section for showing previous user inputs and results -->
     <div id="history-container">
         <h3>History</h3>
+        <!-- Recent history container for displaying the last prompt -->
         <div id="recent-history"></div>
+        <!-- Expanded history for viewing all details of a specific history item -->
         <div id="expanded-history" class="hidden">
+            <!-- Read-only text area for displaying full generated content -->
             <textarea id="history-details" readonly></textarea>
         </div>
     </div>
