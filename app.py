@@ -81,7 +81,7 @@ def idea_tool():
                     )
                 }
             ],
-            max_tokens=1500,
+            max_tokens=4096,
             temperature=chosen_temperature
         )
 

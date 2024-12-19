@@ -51,13 +51,18 @@ nav a.idea-tool {
 /* Dropdown in top right */
 .style-dropdown {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: -40px; /* Positioned just above the textarea */
+    right: 10px; /* Aligned to the top-right */
+    font-size: 14px;
 }
 
 .style-dropdown select {
     font-size: 16px;
     padding: 5px 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
 }
 
 /* Input area for textarea and button */
@@ -75,11 +80,10 @@ nav a.idea-tool {
     flex: 1;
     padding: 15px;
     font-size: 16px;
-    resize: none; /* Prevent manual resize */
+    resize: none; /* Prevent manual resizing */
     border: 2px solid #333;
     border-radius: 5px;
-    padding-right: 60px; /* Make space for the button */
-    position: relative;
+    padding-right: 60px; /* Space for the button */
 }
 
 #user_input:focus {
@@ -98,7 +102,7 @@ nav a.idea-tool {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    z-index: 10; /* Ensure the button stays on top */
+    z-index: 10; /* Ensure it stays above the textarea */
 }
 
 #generate_btn:hover {
@@ -106,10 +110,12 @@ nav a.idea-tool {
 }
 
 .input-area {
-    position: relative; /* Ensure textarea and button are positioned together */
+    position: relative;
+    margin-top: 50px; /* Space below other content */
     display: flex;
-    align-items: stretch;
-    justify-content: center;
+    flex-direction: column;
+    align-items: stretch; /* Align all elements to stretch full width */
+    height: 40vh; /* Adjust as needed */
 }
 
 /* Response container */
@@ -130,4 +136,83 @@ nav a.idea-tool {
     padding: 15px;
     border-radius: 5px;
     font-weight: normal;
+}
+
+/* Hidden by default */
+.hidden {
+    display: none;
+}
+
+/* Animated result box */
+#result_box {
+    /* Initially hidden via class, not inline display */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 85%;
+    height: 85%;
+    background: #fff;
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: translate(-50%, -50%); /* Keep transform here */
+    opacity: 0; /* Start at 0 opacity */
+}
+
+.show-result {
+    display: flex;
+    animation: expand 0.5s forwards;
+}
+
+/* Animation for expanding the box */
+@keyframes expand {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Content inside the result box */
+#result_content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+}
+
+/* Result text area */
+#result_text {
+    flex: 1;
+    overflow-y: auto;
+    font-size: 16px;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background: #f9f9f9;
+    white-space: pre-wrap;
+
+}
+
+/* Back button */
+#back_btn {
+    align-self: flex-end;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#back_btn:hover {
+    background: #555;
 }

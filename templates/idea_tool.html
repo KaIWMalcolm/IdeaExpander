@@ -1,31 +1,33 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="idea-tool-container">
-    <!-- Dropdown menu top-right -->
-    <div class="style-dropdown">
-        <select id="style_choice">
-            <option value="default" {% if selected_style == 'default' %}selected{% endif %}>Default</option>
-            <option value="writing prompt" {% if selected_style == 'writing prompt' %}selected{% endif %}>Writing Prompt</option>
-            <option value="business/product idea" {% if selected_style == 'business/product idea' %}selected{% endif %}>Business/Product Idea</option>
-        </select>
-    </div>
-
-    <form method="POST" action="{{ url_for('idea_tool') }}">
+    <form method="POST" action="{{ url_for('idea_tool') }}" id="idea-form">
         <div class="input-area">
+            <!-- Dropdown menu positioned above the textarea -->
+            <div class="style-dropdown">
+                <select id="style_choice" name="style_choice">
+                    <option value="default" {% if selected_style == 'default' %}selected{% endif %}>Default</option>
+                    <option value="writing prompt" {% if selected_style == 'writing prompt' %}selected{% endif %}>Writing Prompt</option>
+                    <option value="business/product idea" {% if selected_style == 'business/product idea' %}selected{% endif %}>Business/Product Idea</option>
+                </select>
+            </div>
+            <!-- Text area and button -->
             <textarea id="user_input" name="user_input" placeholder="Enter your idea here..."></textarea>
             <button id="generate_btn" type="submit">Generate</button>
         </div>
     </form>
-
-    <!-- This container will show loading or errors -->
-    <div id="response_container">
-        {% if error %}
-            <div class="error">{{ error }}</div>
-        {% endif %}
-        {% if result %}
-            <!-- A hidden element to store the expanded idea so JS can extract it -->
-            <div id="result" style="display:none;">{{ result }}</div>
-{% endif %}
+    
+    {% if result %}
+    <!-- Hidden div to store the expanded idea so JS can extract it -->
+    <div id="result" style="display:none;">{{ result }}</div>
+    {% endif %}
+    
+    <!-- This container will show the animated result box -->
+    <div id="result_box" class="hidden">
+        <div id="result_content">
+            <div id="result_text"></div>
+            <button id="back_btn">Back</button>
+        </div>
     </div>
 </div>
 {% endblock %}

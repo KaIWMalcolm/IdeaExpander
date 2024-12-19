@@ -20,6 +20,12 @@
     </header>
     <main>
         {% block content %}{% endblock %}
+        <div class="theme-dropdown">
+            <select id="theme_selector">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+            </select>
+        </div>
     </main>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
