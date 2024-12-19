@@ -1,12 +1,12 @@
 /* Default theme variables */
 :root {
-    --bg-color: #ffffff; /* Light background */
-    --text-color: #333333; /* Dark text */
-    --border-color: #333333; /* Border color */
-    --btn-bg-color: #333333; /* Button background */
-    --btn-text-color: #ffffff; /* Button text */
-    --hover-bg-color: #a8a8a8; /* Link hover background */
-    --input-bg-color: #ffffff; /* Input field background */
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --border-color: #333333;
+    --btn-bg-color: #333333;
+    --btn-text-color: #ffffff;
+    --hover-bg-color: #a8a8a8;
+    --input-bg-color: #ffffff;
 }
 
 /* Dark theme variables */
@@ -100,23 +100,23 @@ nav a:hover {
     background-color: var(--hover-bg-color);
 }
 
-/* Ensure the Idea Tool button matches the hamburger menu size */
+/* Idea Tool button */
 .idea-tool {
     position: absolute;
     left: 20px;
     top: 10px;
-    display: flex; /* Use flexbox for centering */
-    align-items: center; /* Vertically center */
-    justify-content: center; /* Horizontally center */
-    padding: 5px 10px; /* Compact padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
     background-color: var(--btn-bg-color);
     color: var(--btn-text-color);
-    font-size: 20px; /* Adjusted font size */
+    font-size: 20px;
     text-decoration: none;
     border-radius: 5px;
     border: 1px solid var(--border-color);
-    height: 45px; /* Same height as the hamburger menu */
-    width: 100px; /* Set consistent width */
+    height: 45px;
+    width: 100px;
     transition: background-color 0.3s ease, transform 0.2s ease;
     text-align: center;
 }
@@ -130,7 +130,7 @@ nav a:hover {
     transform: scale(0.95);
 }
 
-/* Page Containers */
+/* Common container styling */
 .home-container,
 .about-container,
 .contact-container {
@@ -143,7 +143,7 @@ nav a:hover {
     color: var(--text-color);
 }
 
-/* Idea tool container styling */
+/* Idea tool container */
 .idea-tool-container {
     position: relative;
     width: 90%;
@@ -151,10 +151,10 @@ nav a:hover {
     margin: 40px auto;
 }
 
-/* Dropdown in top right */
+/* Style dropdown */
 .style-dropdown {
     position: absolute;
-    top: -40px; /* Adjusted to be above the input box */
+    top: -40px;
     right: 10px;
     font-size: 14px;
 }
@@ -179,14 +179,15 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
-.hidden {
-    display: none;
-}
-
 .home-container p {
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 20px;
+}
+
+/* Utility classes */
+.hidden {
+    display: none;
 }
 
 /* Big button styling */
@@ -251,7 +252,7 @@ nav a:hover {
     display: flex;
     gap: 20px;
     justify-content: space-between;
-    flex-wrap: wrap; /* In case window is small, fields stack */
+    flex-wrap: wrap;
 }
 
 .form-group {
@@ -296,6 +297,7 @@ nav a:hover {
     transform: scale(0.95);
 }
 
+/* History section */
 #recent-history {
     margin-top: 17px;
     border: 2px solid var(--border-color);
@@ -304,31 +306,31 @@ nav a:hover {
     background: var(--input-bg-color);
     color: var(--text-color);
     font-size: 14px;
-    max-height: 170px; /* Reasonable height */
+    max-height: 170px;
     overflow-y: auto;
 }
 
 .history-button {
-    width: 100%; /* Ensures the button spans the width of the container */
-    text-align: center; /* Centers the text inside the button */
-    font-weight: bold; /* Makes the text bold */
-    padding: 10px; /* Adds some padding for better appearance */
-    margin: 3px 0; /* Adds spacing between buttons */
-    background-color: var(--btn-bg-color); /* Matches the theme button color */
-    color: var(--btn-text-color); /* Matches the theme text color */
-    border: 1px solid var(--border-color); /* Adds a border */
-    border-radius: 5px; /* Adds rounded corners */
-    cursor: pointer; /* Makes the cursor a pointer on hover */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Adds hover effects */
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    margin: 3px 0;
+    background-color: var(--btn-bg-color);
+    color: var(--btn-text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .history-button:hover {
-    background-color: var(--hover-bg-color); /* Changes background color on hover */
-    transform: scale(1.02); /* Slight zoom effect on hover */
+    background-color: var(--hover-bg-color);
+    transform: scale(1.02);
 }
 
 .history-button:active {
-    transform: scale(0.95); /* Pressed button effect */
+    transform: scale(0.95);
 }
 
 #expanded-history {
@@ -340,10 +342,6 @@ nav a:hover {
     color: var(--text-color);
     border-radius: 5px;
     overflow-y: auto;
-    display: none; /* Hidden by default */
-}
-
-.hidden {
     display: none;
 }
 
@@ -366,7 +364,7 @@ nav a:hover {
     border-radius: 5px;
     background-color: var(--input-bg-color);
     color: var(--text-color);
-    padding-right: 60px; /* Space for the button */
+    padding-right: 60px;
 }
 
 #user_input:focus {
@@ -391,7 +389,7 @@ nav a:hover {
     background: var(--hover-bg-color);
 }
 
-/* Response Styling */
+/* Response styling */
 .result,
 .error,
 .success {
@@ -418,6 +416,7 @@ nav a:hover {
     border-color: #c3e6cb;
 }
 
+/* Result box and animation */
 #result_box {
     position: fixed;
     top: 50%;
@@ -470,7 +469,6 @@ nav a:hover {
     background: var(--hover-bg-color);
 }
 
-/* Keep the animation and show-result classes as before */
 .show-result {
     display: flex;
     animation: expand 0.5s forwards;
@@ -487,7 +485,7 @@ nav a:hover {
     }
 }
 
-/* Theme Dropdown */
+/* Theme dropdown */
 .theme-dropdown {
     position: fixed;
     bottom: 20px;
@@ -504,9 +502,9 @@ nav a:hover {
     cursor: pointer;
 }
 
-/* Default: Hide the hamburger menu on larger screens */
+/* Hamburger menu */
 .menu-toggle {
-    display: none; /* Hidden by default for non-mobile views */
+    display: none;
     position: absolute;
     right: 20px;
     top: 10px;
@@ -514,20 +512,20 @@ nav a:hover {
     cursor: pointer;
     background-color: var(--btn-bg-color);
     color: var(--btn-text-color);
-    padding: 5px 15px; /* Balanced padding */
+    padding: 5px 15px;
     border-radius: 5px;
-    height: 45px; /* Slightly adjusted height for consistency */
-    line-height: 45px; /* Aligns the icon vertically */
+    height: 45px;
+    line-height: 45px;
     z-index: 100;
+    text-align: center;
     align-items: center;
     justify-content: center;
-    text-align: center;
 }
 
+/* Responsive styles */
 @media (max-width: 768px) {
-
     header {
-        padding-bottom: 75px; /* Adds space below the header */
+        padding-bottom: 75px;
     }
 
     .idea-tool {
@@ -537,9 +535,8 @@ nav a:hover {
         z-index: 100;
     }
 
-    /* Show hamburger menu only on mobile view */
     .menu-toggle {
-        display: block; /* Visible only in mobile view */
+        display: block;
     }
 
     nav {
@@ -547,13 +544,13 @@ nav a:hover {
         flex-direction: column;
         position: absolute;
         top: 70px;
-        right: 10px; /* Slightly shifted inward to reduce overall width */
+        right: 10px;
         background-color: var(--bg-color);
         border: 1px solid var(--border-color);
-        width: 100px; /* Reduced width for a less wide appearance */
+        width: 100px;
         padding: 10px;
         z-index: 99;
-        border-radius: 5px; /* Optional: match the menu's rounded corners */
+        border-radius: 5px;
     }
 
     nav a {
