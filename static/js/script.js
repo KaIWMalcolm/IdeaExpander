@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultBox = document.getElementById('result_box');
     const resultText = document.getElementById('result_text');
     const backButton = document.getElementById('back_btn');
+    const themeSelector = document.getElementById('theme_selector');
 
     // Ensure the result box is hidden on page load
     resultBox.classList.add('hidden');
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         type();
     };
 
+    // Form submission handler
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const inputValue = userInput.value.trim();
@@ -58,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (resultDiv) {
                 // Apply typing effect to the result text
-                typeText(resultText, resultDiv.textContent, 10); // Typing speed is 30ms per character
+                typeText(resultText, resultDiv.textContent, 30); // Typing speed is 30ms per character
             } else {
                 resultText.textContent = 'No result returned.';
             }
@@ -75,4 +77,21 @@ document.addEventListener('DOMContentLoaded', () => {
         userInput.value = ''; // Clear the textarea for new input
         resultText.textContent = ''; // Clear the result text
     });
+
+    // Function to switch themes
+    const setTheme = (theme) => {
+        const root = document.documentElement;
+        root.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    };
+
+    // Theme selector handler
+    themeSelector.addEventListener('change', (e) => {
+        setTheme(e.target.value);
+    });
+
+    // Load the saved theme on page load
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    themeSelector.value = savedTheme;
+    setTheme(savedTheme);
 });

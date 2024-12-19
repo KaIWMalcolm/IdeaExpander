@@ -1,13 +1,82 @@
+/* Default theme variables */
+:root {
+    --bg-color: #ffffff; /* Light background */
+    --text-color: #333333; /* Dark text */
+    --border-color: #333333; /* Border color */
+    --btn-bg-color: #333333; /* Button background */
+    --btn-text-color: #ffffff; /* Button text */
+    --hover-bg-color: #a8a8a8; /* Link hover background */
+    --input-bg-color: #ffffff; /* Input field background */
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --border-color: #444444;
+    --btn-bg-color: #444444;
+    --btn-text-color: #ffffff;
+    --hover-bg-color: #555555;
+    --input-bg-color: #1e1e1e;
+}
+
+/* Mango theme variables */
+[data-theme="mango"] {
+    --bg-color: #E6BD91;
+    --text-color: #4B3226;
+    --border-color: #E6D391;
+    --btn-bg-color: #E6AF91;
+    --btn-text-color: #4B3226;
+    --hover-bg-color: #E5C990;
+    --input-bg-color: #E3D9C5;
+}
+
+/* Avocado theme variables */
+[data-theme="avocado"] {
+    --bg-color: #ABE6A1;
+    --text-color: #2E402B;
+    --border-color: #E6DDA1;
+    --btn-bg-color: #C8E6A0;
+    --btn-text-color: #2E402B;
+    --hover-bg-color: #A1E6B0;
+    --input-bg-color: #D5E6BE;
+}
+
+/* Sunset theme variables */
+[data-theme="sunset"] {
+    --bg-color: #E6765E;
+    --text-color: #4B2320;
+    --border-color: #E6A55E;
+    --btn-bg-color: #E65E5E;
+    --btn-text-color: #4B2320;
+    --hover-bg-color: #E6B85E;
+    --input-bg-color: #E3B8A1;
+}
+
+/* Ocean theme variables */
+[data-theme="ocean"] {
+    --bg-color: #9EE6E2;
+    --text-color: #123B49;
+    --border-color: #9EBCE6;
+    --btn-bg-color: #9FD3E6;
+    --btn-text-color: #123B49;
+    --hover-bg-color: #9EA6E6;
+    --input-bg-color: #E1E2E3;
+}
+
+/* Global styles */
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     margin: 0;
     padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 /* Navigation styles */
 header {
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid var(--border-color);
     position: relative;
 }
 
@@ -15,14 +84,12 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     padding: 10px 0;
 }
 
-/* Style all nav links */
 nav a {
     text-decoration: none;
-    color: #333;
+    color: var(--text-color);
     font-size: 27px;
     margin: 0 20px;
     border-radius: 15px;
@@ -31,7 +98,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #a8a8a8; /* Light grey background on hover */
+    background-color: var(--hover-bg-color);
 }
 
 /* Position the Idea Tool link to the top-left */
@@ -51,44 +118,46 @@ nav a.idea-tool {
 /* Dropdown in top right */
 .style-dropdown {
     position: absolute;
-    top: -40px; /* Positioned just above the textarea */
-    right: 10px; /* Aligned to the top-right */
+    top: -40px;
+    right: 10px;
     font-size: 14px;
 }
 
 .style-dropdown select {
     font-size: 16px;
     padding: 5px 10px;
-    border: 2px solid #333;
+    border: 2px solid var(--border-color);
     border-radius: 5px;
-    background-color: #fff;
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
     cursor: pointer;
 }
 
 /* Input area for textarea and button */
-/* Input area for textarea and button */
 .input-area {
     position: relative;
-    margin-top: 50px; /* space below dropdown */
+    margin-top: 50px;
     display: flex;
-    height: 33vh; /* about one-third of the page height */
     flex-direction: column;
-    align-items: stretch; /* Ensure full width of textarea */
+    height: 33vh;
+    align-items: stretch;
 }
 
 #user_input {
     flex: 1;
     padding: 15px;
     font-size: 16px;
-    resize: none; /* Prevent manual resizing */
-    border: 2px solid #333;
+    resize: none;
+    border: 2px solid var(--border-color);
     border-radius: 5px;
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
     padding-right: 60px; /* Space for the button */
 }
 
 #user_input:focus {
     outline: none;
-    border-color: #555;
+    border-color: var(--hover-bg-color);
 }
 
 #generate_btn {
@@ -96,26 +165,16 @@ nav a.idea-tool {
     bottom: 10px;
     right: 10px;
     padding: 8px 15px;
-    background: #333;
-    color: #fff;
+    background: var(--btn-bg-color);
+    color: var(--btn-text-color);
     font-size: 14px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    z-index: 10; /* Ensure it stays above the textarea */
 }
 
 #generate_btn:hover {
-    background: #555;
-}
-
-.input-area {
-    position: relative;
-    margin-top: 50px; /* Space below other content */
-    display: flex;
-    flex-direction: column;
-    align-items: stretch; /* Align all elements to stretch full width */
-    height: 40vh; /* Adjust as needed */
+    background: var(--hover-bg-color);
 }
 
 /* Response container */
@@ -125,6 +184,7 @@ nav a.idea-tool {
     font-size: 16px;
 }
 
+/* Error and result styling */
 .error {
     color: red;
     margin-top: 10px;
@@ -132,10 +192,11 @@ nav a.idea-tool {
 
 .result {
     margin-top: 10px;
-    background: #f9f9f9;
+    background: var(--input-bg-color);
     padding: 15px;
     border-radius: 5px;
     font-weight: normal;
+    border: 2px solid var(--border-color);
 }
 
 /* Hidden by default */
@@ -145,21 +206,20 @@ nav a.idea-tool {
 
 /* Animated result box */
 #result_box {
-    /* Initially hidden via class, not inline display */
     position: fixed;
     top: 50%;
     left: 50%;
     width: 85%;
     height: 85%;
-    background: #fff;
-    border: 2px solid #333;
+    background: var(--bg-color);
+    border: 2px solid var(--border-color);
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     z-index: 100;
     flex-direction: column;
     justify-content: space-between;
-    transform: translate(-50%, -50%); /* Keep transform here */
-    opacity: 0; /* Start at 0 opacity */
+    transform: translate(-50%, -50%);
+    opacity: 0;
 }
 
 .show-result {
@@ -187,17 +247,16 @@ nav a.idea-tool {
     padding: 20px;
 }
 
-/* Result text area */
 #result_text {
     flex: 1;
     overflow-y: auto;
     font-size: 16px;
     padding: 10px;
-    border: 2px solid #333;
+    border: 2px solid var(--border-color);
     border-radius: 5px;
-    background: #f9f9f9;
+    background: var(--input-bg-color);
+    color: var(--text-color);
     white-space: pre-wrap;
-
 }
 
 /* Back button */
@@ -205,8 +264,8 @@ nav a.idea-tool {
     align-self: flex-end;
     margin-top: 10px;
     padding: 10px 20px;
-    background: #333;
-    color: #fff;
+    background: var(--btn-bg-color);
+    color: var(--btn-text-color);
     font-size: 16px;
     border: none;
     border-radius: 5px;
@@ -214,5 +273,22 @@ nav a.idea-tool {
 }
 
 #back_btn:hover {
-    background: #555;
+    background: var(--hover-bg-color);
+}
+
+/* Theme dropdown */
+.theme-dropdown {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 16px;
+}
+
+.theme-dropdown select {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 2px solid var(--border-color);
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
+    cursor: pointer;
 }
