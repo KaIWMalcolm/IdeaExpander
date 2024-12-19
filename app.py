@@ -18,7 +18,7 @@ mail = Mail(app)  # Initialize Flask-Mail with the app
 
 # Load environment variables from .env file
 load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")  # Set the OpenAI API key from environment
+openai.api_key = os.environ.get("OPENAI_API_KEY")  # Set the OpenAI API key from environment
 
 # Route for the home page
 @app.route('/')
